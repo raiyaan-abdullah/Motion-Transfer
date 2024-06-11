@@ -1,0 +1,21 @@
+id,name
+0,appearing
+1,arriving
+2,bouncing
+3,changing color
+4,changing shape
+5,cloning
+6,departing
+7,disappearing
+8,expanding
+9,falling
+10,following
+11,merging
+12,moving in a path
+13,not colliding
+14,occlusion
+15,orbiting
+16,rising
+17,shooting projectile
+18,shrinking
+19,teleporting

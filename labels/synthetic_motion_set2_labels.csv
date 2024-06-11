@@ -1,0 +1,47 @@
+id,name
+0,Multiple objects all appearing one by one by increasing opacity
+1,Two objects appearing among two other objects
+2,Multiple objects arriving one by one
+3,Single object arriving among many objects
+4,"Single object arriving beside another single object, pausing then going away"
+5,Multiple balls bouncing on plain surface at almost similar heights eventually stop
+6,Single ball imitating the motion of bouncing against a wall
+7,Single ball bouncing on a plain surface perpetually
+8,Single ball imitating the motion of bouncing and going up stairs
+9,Single object changing from dark to bright color
+10,Single object changing color then returning to previous one
+11,Single object of other shape changes into pyramid
+12,Single object changing into another shape then turning back to original shape
+13,Single object cloning into two identical objects both going in different directions
+14,Single object cloning into multiple identical objects at once
+15,Multiple objects departing one by one
+16,Single object departing among many objects
+17,"Single object departing beside another single object, then coming back shortly"
+18,Multiple objects all disappearing one by one by decreasing opacity
+19,Multiple objects some disappearing and some remaining
+20,Small single object expanding into large object
+21,Two same small objects expanding into different bigger sizes
+22,Single object falling in a straight angle
+23,Single object falling in a parabolic trajectory
+24,Single object following another object all the time in a complex path
+25,Single object not following another object at first but later starts following
+26,Faster object merging with slower object into one similar sized object while moving in same direction
+27,Multiple objects merging into multiple big objects
+28,Single object moving quickly from one position to another and stopping
+29,Two objects moving and switching their positions
+30,Single object moving from right to left
+31,Two objects moving in opposite directions in circular path but not colliding later
+32,One object moving towards multiple stationary objects but not colliding
+33,Big object coming infront of small object mostly or fully occluding it
+34,Two objects partially occluding two other objects switch positions with the latter two and go behind them
+35,Single object orbiting another object in the center in counter clockwise direction on horizontal plane
+36,Single object orbiting another object in clockwise direction then second object orbitting first object in clockwise direction on horizontal plane
+37,Single object orbiting another object in the center in counter clockwise direction on vertical plane
+38,Single object rising in a straight angle
+39,Single object rising in a parabolic trajectory
+40,Shooting projectile from left corner to right corner
+41,Shooting two projectiles form opposite corners switching their positions
+42,Large single object shrinking into very small object
+43,Two different large objects shrinking into different smaller sizes
+44,Four objects in four corners switch places by teleporting
+45,Two objects together in one corner then one teleports to other corner
