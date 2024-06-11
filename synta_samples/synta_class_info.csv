@@ -1,0 +1,100 @@
+Head class id,Head class,Intra class no.,Fine Class,,Set,Set Fine class id
+0,Appearing,1,Single object appearing by increasing opacity,,1,0
+0,Appearing,2,Multiple objects all appearing simultaneously by increasing opacity,,1,1
+0,Appearing,3,Multiple objects all appearing one by one by increasing opacity,,2,0
+0,Appearing,4,Two objects appearing among two other objects,,2,1
+1,Arriving,1,Single object arriving,,1,2
+1,Arriving,2,Multiple objects arriving simultaneously,,1,3
+1,Arriving,3,Multiple objects arriving one by one,,2,2
+1,Arriving,4,Single object arriving among many objects,,2,3
+1,Arriving,5,Single object arriving beside another single object,,1,4
+1,Arriving,6,"Single object arriving beside another single object, pausing then going away",,2,4
+2,Bouncing,1,Single ball bouncing on a plain surface eventually stops,,1,5
+2,Bouncing,2,Multiple balls bouncing on plain surface at almost similar heights eventually stop,,2,5
+2,Bouncing,3,Multiple balls bouncing on plain surface at very different heights eventually stop,,1,6
+2,Bouncing,4,Single ball imitating the motion of bouncing against a wall,,2,6
+2,Bouncing,5,Single ball bouncing and going forward,,1,7
+2,Bouncing,6,Single ball bouncing on a plain surface perpetually,,2,7
+2,Bouncing,7,Single ball imitating the motion of bouncing and going down stairs,,1,8
+2,Bouncing,8,Single ball imitating the motion of bouncing and going up stairs,,2,8
+3,Changing color,1,Single object keeps changing colors,,1,9
+3,Changing color,2,Two objects changing colors by switching with each other,,1,10
+3,Changing color,3,Single object changing from bright to dark color,,1,11
+3,Changing color,4,Single object changing from dark to bright color,,2,9
+3,Changing color,5,Single object changing color then returning to previous one,,2,10
+4,Changing shape,1,Single object of other shape changes into sphere,,1,12
+4,Changing shape,2,Single object of other shape changes into cube,,1,13
+4,Changing shape,3,Single object of other shape changes into pyramid,,2,11
+4,Changing shape,4,Two objects changing shapes by switching with each other,,1,14
+4,Changing shape,5,Single object changing into another shape then turning back to original shape,,2,12
+5,Cloning,1,Single object cloning into two identical objects both going in same direction,,1,15
+5,Cloning,2,Single object cloning into two identical objects both going in different directions,,2,13
+5,Cloning,3,Single object cloning into multiple identical objects one by one,,1,16
+5,Cloning,4,Single object cloning into multiple identical objects at once,,2,14
+5,Cloning,5,Single object cloning into one identical object and another object with different colour,,1,17
+6,Departing,1,Single object departing,,1,18
+6,Departing,2,Multiple objects departing simultaneously,,1,19
+6,Departing,3,Multiple objects departing one by one,,2,15
+6,Departing,4,Single object departing among many objects,,2,16
+6,Departing,5,Single object departing beside another single object,,1,20
+6,Departing,6,"Single object departing beside another single object, then coming back shortly",,2,17
+7,Disappearing,1,Single object disappearing by decreasing opacity,,1,21
+7,Disappearing,2,Multiple objects all disappearing simultaneously by decreasing opacity,,1,22
+7,Disappearing,3,Multiple objects all disappearing one by one by decreasing opacity,,2,18
+7,Disappearing,4,Multiple objects some disappearing and some remaining,,2,19
+8,Expanding,1,Small single object expanding into medium object,,1,23
+8,Expanding,2,Small single object expanding into large object,,2,20
+8,Expanding,3,Two different small objects expanding into same bigger size,,1,24
+8,Expanding,4,Two same small objects expanding into different bigger sizes,,2,21
+9,Falling,1,Single object falling straight down without changing direction,,1,25
+9,Falling,2,Single object falling down in a zigzag pattern,,1,26
+9,Falling,3,Single object falling in a straight angle,,2,22
+9,Falling,4,Single object falling in a parabolic trajectory,,2,23
+10,Following,1,Single object following another object all the time while moving in a straight line,,1,27
+10,Following,2,Single object following another object for some time while moving in straight line then follows another path,,1,28
+10,Following,3,Multiple objects following one object all the time in a straight line,,1,29
+10,Following,4,Single object following another object all the time in a complex path,,2,24
+10,Following,5,Single object not following another object at first but later starts following,,2,25
+11,Merging,1,Two objects merging into one similar sized object while moving towards each other,,1,30
+11,Merging,2,Faster object merging with slower object into one similar sized object while moving in same direction,,2,26
+11,Merging,3,Multiple objects merging into one big object,,1,31
+11,Merging,4,Multiple objects merging into multiple big objects,,2,27
+12,Moving in a path,1,Single object moving slowly from one position to another and stopping,,1,32
+12,Moving in a path,2,Single object moving quickly from one position to another and stopping,,2,28
+12,Moving in a path,3,Single object moving slowly from one position to another and coming back to original position,,1,33
+12,Moving in a path,4,Two objects moving and switching their positions,,2,29
+12,Moving in a path,5,Single object moving from left to right,,1,34
+12,Moving in a path,6,Single object moving from right to left,,2,30
+13,Not colliding,1,Two objects moving towards each other but not colliding,,1,35
+13,Not colliding,2,Single object moving towards single stationary object but not colliding with it,,1,36
+13,Not colliding,3,Multiple objects moving towards each other but not colliding among themselves,,1,37
+13,Not colliding,4,Two objects moving in opposite directions in circular path but not colliding later,,2,31
+13,Not colliding,5,One object moving towards multiple stationary objects but not colliding,,2,32
+14,Occlusion,1,Small object coming infront of big object barely occluding it,,1,38
+14,Occlusion,2,Big object coming infront of small object mostly or fully occluding it,,2,33
+14,Occlusion,3,Object which is occluding another object switches places and goes behind it,,1,39
+14,Occlusion,4,Two objects partially occluding two other objects switch positions with the latter two and go behind them,,2,34
+15,Orbiting,1,Single object orbiting another object in the center in clockwise direction on horizontal plane,,1,40
+15,Orbiting,2,Single object orbiting another object in the center in counter clockwise direction on horizontal plane,,2,35
+15,Orbiting,3,Single object orbiting another object in the center in clockwise direction first and then counter clockwise direction on horizontal plane,,1,41
+15,Orbiting,4,Single object orbiting another object in clockwise direction then second object orbitting first object in clockwise direction on horizontal plane,,2,36
+15,Orbiting,5,Single object orbiting another object in the center in clockwise direction on vertical plane,,1,42
+15,Orbiting,6,Single object orbiting another object in the center in counter clockwise direction on vertical plane,,2,37
+16,Rising,1,Single object rising straight up without changing direction,,1,43
+16,Rising,2,Single object rising in a zigzag pattern,,1,44
+16,Rising,3,Single object rising in a straight angle,,2,38
+16,Rising,4,Single object rising in a parabolic trajectory,,2,39
+17,Shooting projectile,1,Shooting projectile from one corner to opposite corner,,1,45
+17,Shooting projectile,2,Shooting projectile from right corner to left corner,,1,46
+17,Shooting projectile,3,Shooting projectile from left corner to right corner,,2,40
+17,Shooting projectile,4,Shooting two projectiles from same position to opposite corner,,1,47
+17,Shooting projectile,5,Shooting two projectiles form opposite corners switching their positions,,2,41
+18,Shrinking,1,Large single object shrinking into medium sized object,,1,48
+18,Shrinking,2,Large single object shrinking into very small object,,2,42
+18,Shrinking,3,Two different large objects shrinking into same smaller size,,1,49
+18,Shrinking,4,Two different large objects shrinking into different smaller sizes,,2,43
+19,Teleporting,1,Single object teleporting from one corner to another,,1,50
+19,Teleporting,2,Single object teleporting from one corner to another while another object is in the center,,1,51
+19,Teleporting,3,Two objects in opposite corners switch places by teleporting,,1,52
+19,Teleporting,4,Four objects in four corners switch places by teleporting,,2,44
+19,Teleporting,5,Two objects together in one corner then one teleports to other corner,,2,45
