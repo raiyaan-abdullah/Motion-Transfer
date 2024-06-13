@@ -1,7 +1,7 @@
 # TrAc-Bench
 ## SynTA
 To generate the dataset videos, please follow the instructions in [GENERATE_SYNTA.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/synta_generate_blender/GENERATE_SYNTA.md).
-A sample of the dataset with 5 videos for each fine-context class is available in `synta_samples`. The full dataset is available on [HuggingFace](https://huggingface.co/datasets/anonymous-dataset/synta) (temporarily under an anonymous account).
+A sample of the dataset with 5 videos for each fine-context class is given in `synta_samples`. The full dataset is available on [HuggingFace](https://huggingface.co/datasets/anonymous-dataset/synta) (temporarily under an anonymous account).
 
 ## Benchmark datasets
 The detailed videos list and class labels for `Something-something-v2 - TA`, `Kinectics400 - TA` and `SynTA` are provided in `dataset_splits` and `labels`.
