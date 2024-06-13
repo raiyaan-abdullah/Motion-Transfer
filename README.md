@@ -4,7 +4,7 @@ To generate the dataset videos, please follow the instructions in [GENERATE_SYNT
 A sample of the dataset with 5 videos for each fine-context class is available in `synta_samples`.
 
 ## Benchmark datasets
-The `dataset_splits` and `labels` contain detailed videos list and class labels for `Something-something-v2 - TA`, `Kinectics400 - TA` and `SynTA`. The datasets are released under an MIT license.
+The detailed videos list and class labels for `Something-something-v2 - TA`, `Kinectics400 - TA` and `SynTA` are provided in `dataset_splits` and `labels`.
 
 ## Training
 The training configuration for all the models will be provided soon.
