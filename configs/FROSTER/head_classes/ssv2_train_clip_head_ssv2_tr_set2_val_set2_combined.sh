@@ -1,9 +1,9 @@
 ROOT=path_to_root
 
-B2N_ssv2_file=ssv2_custom/ssv2_distribution3_head_classes
-TRAIN_FILE=ssv2_train_set2.csv
-VAL_FILE=ssv2_val_set2.csv
-TEST_FILE=ssv2_val_set2.csv
+B2N_ssv2_file=path_to_labels_folder
+TRAIN_FILE=ssv2ta_train_set2.csv
+VAL_FILE=ssv2ta_val_set2.csv
+TEST_FILE=ssv2ta_val_set2.csv
 
 cd $ROOT
 
