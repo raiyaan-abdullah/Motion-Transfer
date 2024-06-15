@@ -1,0 +1,72 @@
+TRAIN:
+  ENABLE: true
+  DATASET: kinetics
+  BATCH_SIZE: 64
+  EVAL_PERIOD: 2
+  CHECKPOINT_PERIOD: 2
+  AUTO_RESUME: true
+DATA:
+  NUM_FRAMES: 8
+  SAMPLING_RATE: 8
+  TRAIN_JITTER_SCALES:
+  - 256
+  - 320
+  TRAIN_CROP_SIZE: 224
+  TEST_CROP_SIZE: 256
+  INPUT_CHANNEL_NUM:
+  - 3
+  DECODING_BACKEND: pyav
+  PATH_TO_DATA_DIR: /data/k8s/work_dirs/e33252/analysis/kinetics400/slowfast/datasets/k400/k400_head_classes_v2/tr_set1_val_set1
+RESNET:
+  ZERO_INIT_FINAL_BN: true
+  WIDTH_PER_GROUP: 64
+  NUM_GROUPS: 1
+  DEPTH: 50
+  TRANS_FUNC: bottleneck_transform
+  STRIDE_1X1: false
+  NUM_BLOCK_TEMP_KERNEL:
+  - - 3
+  - - 4
+  - - 6
+  - - 3
+NONLOCAL:
+  LOCATION:
+  - - []
+  - - []
+  - - []
+  - - []
+  GROUP:
+  - - 1
+  - - 1
+  - - 1
+  - - 1
+  INSTANTIATION: softmax
+BN:
+  USE_PRECISE_STATS: true
+  NUM_BATCHES_PRECISE: 200
+SOLVER:
+  BASE_LR: 0.1
+  LR_POLICY: cosine
+  MAX_EPOCH: 50
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0001
+  WARMUP_EPOCHS: 5.0
+  WARMUP_START_LR: 0.01
+  OPTIMIZING_METHOD: sgd
+MODEL:
+  NUM_CLASSES: 41
+  ARCH: c2d
+  MODEL_NAME: ResNet
+  LOSS_FUNC: cross_entropy
+  DROPOUT_RATE: 0.5
+TEST:
+  ENABLE: false
+  DATASET: kinetics
+  BATCH_SIZE: 8
+DATA_LOADER:
+  NUM_WORKERS: 16
+  PIN_MEMORY: true
+NUM_GPUS: 4
+NUM_SHARDS: 1
+RNG_SEED: 0
+OUTPUT_DIR: output/v2/k400_head_classes_v2/r50/r50_tr_set1_val_set1

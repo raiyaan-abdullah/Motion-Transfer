@@ -1,0 +1,15 @@
+DATA:
+    ROOT: '/home/c3-0/datasets/kinetics400_dataset'
+    TRAIN_FILE: ''
+    VAL_FILE: ''
+    DATASET: kinetics400
+    NUM_FRAMES: 32
+    NUM_CLASSES: 41
+    LABEL_LIST: 'labels/kinetics_400_head_labels.csv'
+MODEL:
+    ARCH: ViT-B/16
+TRAIN:
+    BATCH_SIZE: 8 #4
+    ACCUMULATION_STEPS: 2 #8
+    EPOCHS: 50 #50
+SAVE_FREQ: 5

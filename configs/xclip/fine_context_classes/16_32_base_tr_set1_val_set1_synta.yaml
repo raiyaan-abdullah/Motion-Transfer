@@ -1,0 +1,16 @@
+DATA:
+    ROOT: '/home/ra164195/Datasets/synthetic_motion_dataset'
+    TRAIN_FILE: 'datasets_splits/synthetic_motion_splits/synthetic_motion_base2novel/train_set1.txt'
+    VAL_FILE: 'datasets_splits/synthetic_motion_splits/synthetic_motion_base2novel/val_set1.txt'
+    DATASET: ssv2
+    NUM_FRAMES: 32
+    NUM_CLASSES: 53
+    LABEL_LIST: 'labels/synthetic_motion_set1_labels.csv'
+MODEL:
+    ARCH: ViT-B/16
+TRAIN:
+    BATCH_SIZE: 4 #8 for 48gb; BS 64; here batch size means images that can be held in memory of 1 gpu, more gpus can run more processes of same batch size
+    ACCUMULATION_STEPS: 2
+    EPOCHS: 30 #50
+    LR: 2.e-06
+SAVE_FREQ: 5
