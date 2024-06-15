@@ -4,12 +4,12 @@ DATA:
     VAL_FILE: 'path_to_val_videos_list'
     DATASET: kinetics400
     NUM_FRAMES: 32
-    NUM_CLASSES: 41
+    NUM_CLASSES: 111
     LABEL_LIST: 'path_to_label_list'
 MODEL:
     ARCH: ViT-B/16
 TRAIN:
-    BATCH_SIZE: 8 
-    ACCUMULATION_STEPS: 2 
-    EPOCHS: 50 
-SAVE_FREQ: 5
+    BATCH_SIZE: 5
+    ACCUMULATION_STEPS: 2
+    EPOCHS: 50
+SAVE_FREQ: 1

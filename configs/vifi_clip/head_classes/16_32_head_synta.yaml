@@ -1,0 +1,20 @@
+DATA:
+    ROOT: '/home/ra164195/Datasets/synthetic_motion_dataset'
+    TRAIN_FILE: ''
+    VAL_FILE: ''
+    DATASET: ssv2
+    NUM_FRAMES: 32
+    NUM_CLASSES: 20
+    LABEL_LIST: 'labels/synthetic_motion_head_labels.csv'
+MODEL:
+    ARCH: ViT-B/16
+TRAIN:
+    BATCH_SIZE: 4 #8 for 48gb; BS 64; here batch size means images that can be held in memory of 1 gpu, more gpus can run more processes of same batch size
+    ACCUMULATION_STEPS: 2
+    EPOCHS: 30 #50
+    LR: 2.e-06
+TRAINER:
+  ViFi_CLIP:
+    ZS_EVAL: False # Make True only during test mode to evaluate zero-shot vanilla CLIP performance
+    USE: "both" # both refers to complete fine-tuning of CLIP (text+image encoders)
+SAVE_FREQ: 5

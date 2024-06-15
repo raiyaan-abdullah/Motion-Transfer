@@ -2,14 +2,15 @@ DATA:
     ROOT: 'path_to_dataset'
     TRAIN_FILE: 'path_to_train_videos_list'
     VAL_FILE: 'path_to_val_videos_list'
-    DATASET: kinetics400
+    DATASET: ssv2
     NUM_FRAMES: 32
-    NUM_CLASSES: 41
+    NUM_CLASSES: 53
     LABEL_LIST: 'path_to_label_list'
 MODEL:
     ARCH: ViT-B/16
 TRAIN:
-    BATCH_SIZE: 8 
-    ACCUMULATION_STEPS: 2 
-    EPOCHS: 50 
+    BATCH_SIZE: 4
+    ACCUMULATION_STEPS: 2
+    EPOCHS: 30
+    LR: 2.e-06
 SAVE_FREQ: 5
