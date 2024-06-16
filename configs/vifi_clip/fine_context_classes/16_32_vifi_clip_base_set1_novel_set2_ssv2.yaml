@@ -1,17 +1,17 @@
 DATA:
-    ROOT: '/home/c3-0/datasets/somethingsomething/videos'
-    TRAIN_FILE: 'datasets_splits/ssv2_custom_splits/ssv2_distribution3_base2novel/ssv2_tr_act_set1.txt'
-    VAL_FILE: 'datasets_splits/ssv2_custom_splits/ssv2_distribution3_base2novel/ssv2_val_act_set2.txt'
+    ROOT: 'path_to_dataset'
+    TRAIN_FILE: 'path_to_train_videos_list'
+    VAL_FILE: 'path_to_val_videos_list'
     DATASET: ssv2
     NUM_FRAMES: 32
     NUM_CLASSES: 68
-    LABEL_LIST: 'labels/ssv2_149_set2_labels_distribution3.csv'
+    LABEL_LIST: 'path_to_label_list'
 MODEL:
     ARCH: ViT-B/16
 TRAIN:
-    BATCH_SIZE: 4 # BS 64
+    BATCH_SIZE: 4
     ACCUMULATION_STEPS: 2
-    EPOCHS: 50 #11
+    EPOCHS: 50 
     LR: 2.e-06
 TRAINER:
   ViFi_CLIP:
