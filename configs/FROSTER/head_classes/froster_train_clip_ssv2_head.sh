@@ -1,23 +1,23 @@
-ROOT=/home/ra164195/FROSTER
+ROOT=path_to_root_directory
 
-B2N_ssv2_file=ssv2_custom/ssv2_distribution3_base2novel
-TRAIN_FILE=ssv2_train_set1.csv
-VAL_FILE=ssv2_val_set1.csv
-TEST_FILE=ssv2_val_set1.csv
+B2N_ssv2_file=path_to_videos_list
+TRAIN_FILE=train_video_list
+VAL_FILE=val_video_list
+TEST_FILE=val_video_list
 
 cd $ROOT
 
 TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   --cfg configs/Kinetics/TemporalCLIP_vitb16_8x16_STAdapter_SSV2.yaml \
-  --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$B2N_ssv2_file \
+  --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$B2N_synthetic_file \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \
-  DATA.PATH_PREFIX /home/c3-0/datasets/somethingsomething/videos \
+  DATA.PATH_PREFIX path_to_dataset \
   DATA.PATH_LABEL_SEPARATOR , \
-  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/ssv2_custom/ssv2_distribution3_base2novel/train_rephrased_set1.json \
+  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/path_to_label_list \
   TRAIN.ENABLE True \
-  OUTPUT_DIR $ROOT/outputs/ssv2/basetraining/B2N_ssv2_froster_tr_set1_val_set1_combined \
+  OUTPUT_DIR $ROOT/path_to_output_dir \
   TRAIN.BATCH_SIZE 24 \
   TEST.BATCH_SIZE 48 \
   TEST.NUM_ENSEMBLE_VIEWS 1 \
@@ -30,7 +30,7 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   SOLVER.COSINE_END_LR 3.33e-8 \
   TRAIN.MIXED_PRECISION True \
   DATA.DECODING_BACKEND "pyav" \
-  MODEL.NUM_CLASSES 81 \
+  MODEL.NUM_CLASSES 26 \
   MIXUP.ENABLE False \
   AUG.ENABLE False \
   AUG.NUM_SAMPLE 1 \

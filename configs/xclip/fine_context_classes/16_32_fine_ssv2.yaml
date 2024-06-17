@@ -9,7 +9,7 @@ DATA:
 MODEL:
     ARCH: ViT-B/16
 TRAIN:
-    BATCH_SIZE: 8 # BS 64
+    BATCH_SIZE: 8 
     ACCUMULATION_STEPS: 2
     EPOCHS: 50 
     LR: 2.e-06

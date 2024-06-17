@@ -1,9 +1,9 @@
-ROOT=/home/ra164195/FROSTER
+ROOT=path_to_root_directory
 
-B2N_synthetic_file=synthetic_motion/synthetic_motion_base2novel
-TRAIN_FILE=train_set1.csv
-VAL_FILE=val_set1.csv
-TEST_FILE=val_set1.csv
+B2N_ssv2_file=path_to_videos_list
+TRAIN_FILE=train_video_list
+VAL_FILE=val_video_list
+TEST_FILE=val_video_list
 
 cd $ROOT
 
@@ -13,11 +13,11 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \
-  DATA.PATH_PREFIX /home/ra164195/Datasets/synthetic_motion_dataset \
+  DATA.PATH_PREFIX path_to_dataset \
   DATA.PATH_LABEL_SEPARATOR , \
-  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/synthetic_motion/synthetic_motion_base2novel/train_rephrased_set1.json \
+  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/path_to_label_list \
   TRAIN.ENABLE True \
-  OUTPUT_DIR $ROOT/outputs/synthetic_motion/basetraining/B2N_synthetic_froster_tr_set1_val_set1_combined \
+  OUTPUT_DIR $ROOT/path_to_output_dir \
   TRAIN.BATCH_SIZE 24 \
   TEST.BATCH_SIZE 48 \
   TEST.NUM_ENSEMBLE_VIEWS 1 \

@@ -1,0 +1,66 @@
+resume:   
+pretrain:  
+weight_save_dir: 'Exp'
+seed: 1024
+use_motion_loss: True
+training_name: 'k400_fine'
+prompt:
+    use: True
+    INITIATION: 'random' 
+    DEEP: True
+    DROPOUT: 0.1
+data:
+    dataset: kinetics400
+    modality: RGB
+    num_segments: 8   # number of frames per video 
+    seg_length: 1
+    batch_size: 40 
+    workers: 3 
+    image_tmpl: 'img_{:05d}.jpg'
+    use_llm: True
+    ###################################### K-400 base ############################
+    train_list: 'path_to_train_videos_list'
+    val_list: 'path_to_val_videos_list' 
+    gpt_discription: 'GPT_discription/train_gpt_description_list'
+    label_list: 'path_to_train_label_list'
+    ############## K400 novel ################
+    novel_val_list: 'path_to_val_videos_list' 
+    novel_gpt_discription: 'GPT_discription/val_gpt_description_list'
+    novel_label_list: 'path_to_val_label_list'
+    #############
+    index_bias: 1
+    input_size: 224
+    randaug:
+        N: 0 #2
+        M: 0  #9
+    random_shift: False 
+network:
+    arch: ViT-B/16  
+    init: True
+    tsm: False
+    drop_out: 0.1
+    emb_dropout: 0.0
+    type: clip_k400
+    sim_header: "Transf"  #Transf   meanP  LSTM Conv_1D Transf_cls
+    joint: False
+    describe:
+solver:
+    type: cosine
+    epochs: 71 
+    start_epoch: 0
+    epoch_offset: 0
+    optim: adamw
+    lr: 5.e-6
+    lr_warmup_step: 5
+    momentum: 0.9
+    weight_decay: 0.2
+    lr_decay_step: 15
+    lr_decay_factor: 0.1
+    clip_gradient: 20
+    loss_type: nll
+    evaluate: False
+    ratio: 1
+    f_ratio: 10
+logging:
+    print_freq: 10
+    eval_freq: 5 
