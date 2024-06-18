@@ -7,4 +7,4 @@ A sample of the dataset with 5 videos for each fine-context class is given in `s
 The detailed videos list and class labels for `Something-something-v2 - TA`, `Kinectics400 - TA` and `SynTA` are provided in `dataset_splits` and `labels`.
 
 ## Training
-The training configurations for all the models are available at `configs`.
+The training configurations for all the models are available at `configs`. Please see [INSTRUCTIONS.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/configs/INSTRUCTIONS.md) for more details.
