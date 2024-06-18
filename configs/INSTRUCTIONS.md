@@ -7,6 +7,7 @@ Please follow the instructions below for each model. For number of classes, refe
 | Kinetics400-TA | 41        | 111                | 94                 |
 | SynTA      | 20           | 53                 | 46                 |
 
+## Models
 1. **ActionCLIP**
    - Follow the setup instructions in [mmaction2](https://github.com/open-mmlab/mmaction2). Place our configuration files in `projects/actionclip/configs`. You may also create a folder for each custom dataset in `tools/data` and follow existing file organization.
 2. **AIM (Adapt Image Models)**
