@@ -1,23 +1,28 @@
 import bpy
 import random
 import math 
-from basic_setup import *
+from basic_setup_appearance import *
 
-def create_plane():
-    # GROUND PLANE
-    bpy.ops.mesh.primitive_plane_add(size=20, location=(0, 0, 0))  # Adjust size as needed
-    ground_plane = bpy.context.object
-    ground_plane.name = 'Ground'
-    # Optional: Adjust the ground material
-    if not bpy.data.materials.get("GroundMaterial"):
-        ground_material = bpy.data.materials.new(name="GroundMaterial")
-    else:
-        ground_material = bpy.data.materials["GroundMaterial"]
-    ground_material.diffuse_color = (0.8, 0.8, 0.8, 1)  # Light grey color
-    if ground_plane.data.materials:
-        ground_plane.data.materials[0] = ground_material
-    else:
-        ground_plane.data.materials.append(ground_material)
+def create_background_image(image_path):
+    bpy.ops.mesh.primitive_plane_add(size=25, location=(0, 0, 0))
+    background_plane = bpy.context.object
+    background_plane.name = 'Background'
+    
+    material = bpy.data.materials.new(name="BackgroundMaterial")
+    material.use_nodes = True
+    bsdf = material.node_tree.nodes.get('Principled BSDF')
+    bsdf.inputs['Roughness'].default_value = 1.0
+    
+    
+    tex_image = material.node_tree.nodes.new('ShaderNodeTexImage')
+    tex_image.image = bpy.data.images.load(image_path)
+    
+    emission_node = material.node_tree.nodes.new('ShaderNodeEmission')
+    emission_node.inputs['Strength'].default_value = 2.0  # Adjust this value to control brightness
+    
+    material.node_tree.links.new(bsdf.inputs['Base Color'], tex_image.outputs['Color'])
+    
+    background_plane.data.materials.append(material)
 
 def setup_camera(target):
     # Define 6 distinct angles around the target, in radians
@@ -93,10 +98,11 @@ def animate_projectile_trajectory(obj, start_location, initial_velocity, launch_
 
 
 # Main function to generate videos
-def generate_videos(base_path, number_of_videos=100):
+def generate_videos(base_path, number_of_videos=50):
+    images = ["castle.jpg", "coffee_shop.jpg", "city_sunset.jpg", "desert.jpg", "fire.jpg", "forest.jpg", "galaxy.jpg", "gym.jpg", "hospital.jpg", "hotel.jpg"]
     for i in range(number_of_videos):
         # Setup scene for each video
-        output_file_path = f"{base_path}\\shooting4_id_{i+1}.mp4"  # Unique filename for each video
+        output_file_path = f"{base_path}\\shooting_projectile4_id_{i+1}.mp4"  # Unique filename for each video
         setup_scene(output_file_path)
 
         # Clear existing objects
@@ -104,11 +110,11 @@ def generate_videos(base_path, number_of_videos=100):
         bpy.ops.object.delete()
 
         setup_lights()
-        create_plane()
+        create_background_image(image_path+images[i%10])
 
         # Create a random object with glistening material
-        obj1 = create_random_object()
-        obj2 = create_random_object()
+        obj1 = create_random_object_set1()
+        obj2 = create_random_object_set1()
 
         # Setup camera to focus on the falling object
         target = bpy.data.objects.new("Target", None)  # Create an empty object to serve as a target
@@ -121,6 +127,8 @@ def generate_videos(base_path, number_of_videos=100):
         animate_projectile_trajectory(obj1, start_location=(-5, -8, 1), initial_velocity= 11.5, launch_angle_degrees= 45)
         animate_projectile_trajectory(obj2, start_location=(-9, -5, 1), initial_velocity= 11.5, launch_angle_degrees= 45)
 
+        bpy.context.scene.frame_end = 120
+
         # Render the animation
         bpy.ops.render.render(animation=True)
 
@@ -128,5 +136,6 @@ def generate_videos(base_path, number_of_videos=100):
 
 # Assuming Windows path, adjust as needed
 base_path = "C:\\synta\\shooting_projectile"
+image_path = "C:\\synta_generate_blender\\backgrounds\\"
 generate_videos(base_path)
 

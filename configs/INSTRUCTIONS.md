@@ -5,7 +5,7 @@ Please follow the instructions below for each model. For number of classes, refe
 |------------|--------------|--------------------|--------------------|
 | SSv2-TA    | 26           | 81                 | 68                 |
 | Kinetics400-TA | 41        | 111                | 94                 |
-| SynTA      | 20           | 53                 | 46                 |
+| SynTA      | 20           | 53                 | 47                 |
 
 ## Models
 1. **ActionCLIP**

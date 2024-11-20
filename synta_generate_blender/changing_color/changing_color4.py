@@ -1,42 +1,20 @@
 import bpy
 import random
 import math 
-from basic_setup import *
+from basic_setup_appearance import *
 
 # Function to create random object and apply glistening material
-def create_random_object_basic():
-    objects = ['CUBE', 'SPHERE', 'CONE', 'CYLINDER', 'TORUS', 'ICO_SPHERE', 'PYRAMID', 'DODECAHEDRON', 'CAPSULE', 'PRISM']
+def create_random_object_basic_set2():
+    objects = ['SPHERE', 'CYLINDER', 'TORUS', 'CAPSULE']
     object_type = random.choice(objects)
 
     # Add object to the scene based on random choice
-    if object_type == 'CUBE':
-        bpy.ops.mesh.primitive_cube_add(size=2, location=(0, 0, 1))
-    elif object_type == 'SPHERE':
+    if object_type == 'SPHERE':
         bpy.ops.mesh.primitive_uv_sphere_add(radius=1, location=(0, 0, 1))
-    elif object_type == 'CONE':
-        bpy.ops.mesh.primitive_cone_add(radius1=1, depth=2, location=(0, 0, 1))
     elif object_type == 'CYLINDER':
         bpy.ops.mesh.primitive_cylinder_add(radius=1, depth=2, location=(0, 0, 1))
     elif object_type == 'TORUS':
         bpy.ops.mesh.primitive_torus_add(location=(0, 0, 1))
-    elif object_type == 'ICO_SPHERE':
-        bpy.ops.mesh.primitive_ico_sphere_add(radius=1, location=(0, 0, 1))
-    elif object_type == 'PYRAMID':
-        bpy.ops.mesh.primitive_cone_add(vertices=4, radius1=1, depth=2, location=(0, 0, 1))
-    elif object_type == 'DODECAHEDRON':
-        # Start with an icosphere; you might need to adjust subdivisions for your specific needs
-        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, radius=1, location=(0, 0, 1))
-        obj = bpy.context.object
-
-        # Add Decimate modifier to create a more polygonal shape
-        bpy.ops.object.modifier_add(type='DECIMATE')
-        dec_mod = obj.modifiers['Decimate']
-        dec_mod.decimate_type = 'COLLAPSE'
-        # The ratio determines the final amount of geometry; lower values mean more reduction
-        dec_mod.ratio = 0.2  # Adjust this value as needed to get closer to a dodecahedron appearance
-
-        # Apply the modifier to see the changes in the viewport
-        bpy.ops.object.modifier_apply(modifier='Decimate')
     elif object_type == 'CAPSULE':
         # Create cylinder
         bpy.ops.mesh.primitive_cylinder_add(radius=1, depth=2, location=(0, 0, 1))
@@ -59,15 +37,6 @@ def create_random_object_basic():
 
         # Join the parts into a single object
         bpy.ops.object.join()
-    elif object_type == 'PRISM':
-        # Create a triangular prism (as an example)
-        bpy.ops.mesh.primitive_cylinder_add(vertices=3, radius=1, depth=2, location=(0, 0, 1))
-        prism_obj = bpy.context.object
-
-        # Optionally, adjust the prism to align one of the vertices with the world axis, or perform other transformations
-
-        # Smooth the prism shape
-        bpy.ops.object.shade_smooth()
 
     obj = bpy.context.object
 
@@ -82,21 +51,26 @@ def create_random_object_basic():
 
     return obj
 
-def create_plane():
-    # GROUND PLANE
-    bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, 0))  # Adjust size as needed
-    ground_plane = bpy.context.object
-    ground_plane.name = 'Ground'
-    # Optional: Adjust the ground material
-    if not bpy.data.materials.get("GroundMaterial"):
-        ground_material = bpy.data.materials.new(name="GroundMaterial")
-    else:
-        ground_material = bpy.data.materials["GroundMaterial"]
-    ground_material.diffuse_color = (0.8, 0.8, 0.8, 1)  # Light grey color
-    if ground_plane.data.materials:
-        ground_plane.data.materials[0] = ground_material
-    else:
-        ground_plane.data.materials.append(ground_material)
+def create_background_image(image_path):
+    bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, 0))
+    background_plane = bpy.context.object
+    background_plane.name = 'Background'
+    
+    material = bpy.data.materials.new(name="BackgroundMaterial")
+    material.use_nodes = True
+    bsdf = material.node_tree.nodes.get('Principled BSDF')
+    bsdf.inputs['Roughness'].default_value = 1.0
+    
+    
+    tex_image = material.node_tree.nodes.new('ShaderNodeTexImage')
+    tex_image.image = bpy.data.images.load(image_path)
+    
+    emission_node = material.node_tree.nodes.new('ShaderNodeEmission')
+    emission_node.inputs['Strength'].default_value = 2.0  # Adjust this value to control brightness
+    
+    material.node_tree.links.new(bsdf.inputs['Base Color'], tex_image.outputs['Color'])
+    
+    background_plane.data.materials.append(material)
 
 def setup_camera(target):
     # Define 6 distinct angles around the target, in radians
@@ -153,7 +127,8 @@ def animate_smooth_color_change(obj, start_frame, color_change_end_frame, total_
     color_node.keyframe_insert('default_value', frame=total_end_frame)
             
 # Main function to generate videos with adjusted parameters for the smooth color transition
-def generate_videos(base_path, number_of_videos=100):
+def generate_videos(base_path, number_of_videos=50):
+    images = ["inside_white_house.jpg", "kitchen.jpg", "library.jpg", "ocean.jpg", "office.jpg", "rainy_farm.jpg", "sky_clouds.jpg", "storm.jpg", "underwater.jpg", "warehouse.jpg"]
     for i in range(number_of_videos):
         # Setup scene for each video
         output_file_path = f"{base_path}\\changing_color4_id_{i+1}.mp4"  # Unique filename for each video
@@ -164,10 +139,10 @@ def generate_videos(base_path, number_of_videos=100):
         bpy.ops.object.delete()
 
         setup_lights()
-        create_plane()
+        create_background_image(image_path+images[i%10])
 
         # Create a random object with glistening material
-        obj = create_random_object_basic()
+        obj = create_random_object_basic_set2()
 
         # Setup camera to focus on the object
         setup_camera(obj)
@@ -187,4 +162,5 @@ def generate_videos(base_path, number_of_videos=100):
 
 # Assuming Windows path, adjust as needed
 base_path = "C:\\synta\\changing_color"
+image_path = "C:\\synta_generate_blender\\backgrounds\\"
 generate_videos(base_path)

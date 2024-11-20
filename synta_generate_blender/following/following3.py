@@ -1,23 +1,28 @@
 import bpy
 import random
 import math 
-from basic_setup import *
+from basic_setup_appearance import *
 
-def create_plane():
-    # GROUND PLANE
-    bpy.ops.mesh.primitive_plane_add(size=25, location=(0, 0, 0))  # Adjust size as needed
-    ground_plane = bpy.context.object
-    ground_plane.name = 'Ground'
-    # Optional: Adjust the ground material
-    if not bpy.data.materials.get("GroundMaterial"):
-        ground_material = bpy.data.materials.new(name="GroundMaterial")
-    else:
-        ground_material = bpy.data.materials["GroundMaterial"]
-    ground_material.diffuse_color = (0.8, 0.8, 0.8, 1)  # Light grey color
-    if ground_plane.data.materials:
-        ground_plane.data.materials[0] = ground_material
-    else:
-        ground_plane.data.materials.append(ground_material)
+def create_background_image(image_path):
+    bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, 0))
+    background_plane = bpy.context.object
+    background_plane.name = 'Background'
+    
+    material = bpy.data.materials.new(name="BackgroundMaterial")
+    material.use_nodes = True
+    bsdf = material.node_tree.nodes.get('Principled BSDF')
+    bsdf.inputs['Roughness'].default_value = 1.0
+    
+    
+    tex_image = material.node_tree.nodes.new('ShaderNodeTexImage')
+    tex_image.image = bpy.data.images.load(image_path)
+    
+    emission_node = material.node_tree.nodes.new('ShaderNodeEmission')
+    emission_node.inputs['Strength'].default_value = 2.0  # Adjust this value to control brightness
+    
+    material.node_tree.links.new(bsdf.inputs['Base Color'], tex_image.outputs['Color'])
+    
+    background_plane.data.materials.append(material)
 
 def setup_camera(target):
     # Define 6 distinct angles around the target, in radians
@@ -27,12 +32,12 @@ def setup_camera(target):
     angle = random.choice(angles)
     
     # Define a radius for how far from the target the camera should be
-    radius = 50
+    radius = 40
     
     # Calculate the camera's location using spherical coordinates
     x = radius * math.cos(angle) + target.location.x
     y = radius * math.sin(angle) + target.location.y
-    z = random.uniform(15, 40)  # Adjust the Z to change the height of the camera
+    z = random.uniform(15, 30)  # Adjust the Z to change the height of the camera
     
     # Add the camera at the calculated location
     bpy.ops.object.camera_add(location=(x, y, z))
@@ -76,11 +81,9 @@ def animate_leader_with_followers_in_line(leader, followers, start_frame, end_fr
             follower.keyframe_insert(data_path="location", frame=frame)
 
 
-
-
-
 # Main function to generate videos
-def generate_videos(base_path, number_of_videos=100):
+def generate_videos(base_path, number_of_videos=50):
+    images = ["castle.jpg", "coffee_shop.jpg", "city_sunset.jpg", "desert.jpg", "fire.jpg", "forest.jpg", "galaxy.jpg", "gym.jpg", "hospital.jpg", "hotel.jpg"]
     for i in range(number_of_videos):
         # Setup scene for each video
         output_file_path = f"{base_path}\\following3_id_{i+1}.mp4"  # Unique filename for each video
@@ -91,14 +94,14 @@ def generate_videos(base_path, number_of_videos=100):
         bpy.ops.object.delete()
 
         setup_lights()
-        create_plane()
+        create_background_image(image_path+images[i%10])
 
         # Create leader and follower objects using the function
-        leader = create_random_object()
+        leader = create_random_object_set1()
         
         # Create multiple followers
         num_followers = 3  # For example, 3 followers
-        followers = [create_random_object() for _ in range(num_followers)]
+        followers = [create_random_object_set1() for _ in range(num_followers)]
         # Define animation parameters
         start_frame = 1
         end_frame = 120
@@ -120,7 +123,7 @@ def generate_videos(base_path, number_of_videos=100):
         # Animate the leader with followers
         animate_leader_with_followers_in_line(leader, followers, start_frame, end_frame, leader_start_location, leader_end_location)
 
-
+        bpy.context.scene.frame_end = end_frame
         # Render the animation
         bpy.ops.render.render(animation=True)
 
@@ -128,5 +131,6 @@ def generate_videos(base_path, number_of_videos=100):
 
 # Assuming Windows path, adjust as needed
 base_path = "C:\\synta\\following"
+image_path = "C:\\synta_generate_blender\\backgrounds\\"
 generate_videos(base_path)
 

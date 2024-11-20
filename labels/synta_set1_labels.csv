@@ -1,0 +1,54 @@
+id,name
+0,Single object appearing by increasing opacity
+1,Multiple objects all appearing simultaneously by increasing opacity
+2,Single object arriving
+3,Multiple objects arriving simultaneously
+4,Single object arriving beside another single object
+5,Single object bouncing on a plain surface eventually stops
+6,Multiple objects bouncing on plain surface at very different heights eventually stop
+7,Single object bouncing and going forward
+8,Single object imitating the motion of bouncing and going down stairs
+9,Single object keeps changing colors
+10,Two objects changing colors by switching with each other
+11,Single object changing from bright to dark color
+12,Single object of other shape changes into pyramid
+13,Single object of other shape changes into cube
+14,Two objects changing shapes by switching with each other
+15,Single object cloning into two identical objects both going in same direction
+16,Single object cloning into multiple identical objects one by one
+17,Single object cloning into one identical object and another object with different colour
+18,Single object departing
+19,Multiple objects departing simultaneously
+20,Single object departing beside another single object
+21,Single object disappearing by decreasing opacity
+22,Multiple objects all disappearing simultaneously by decreasing opacity
+23,Small single object expanding into medium object
+24,Two different small objects expanding into similar larger size
+25,Single object falling straight down without changing direction
+26,Single object falling down in a zigzag pattern
+27,Single object following another object all the time while moving in a straight line
+28,Single object following another object for some time while moving in straight line then follows another path
+29,Multiple objects following one object all the time in a straight line
+30,Two objects merging into one similar sized object while moving towards each other
+31,Multiple objects merging into one big object
+32,Single object moving slowly from one position to another and stopping
+33,Single object moving slowly from one position to another and coming back to original position
+34,Single object moving from left to right
+35,Two objects moving towards each other but not colliding
+36,Single object moving towards single stationary object but not colliding with it
+37,Multiple objects moving towards each other but not colliding among themselves
+38,Small object coming infront of big object barely occluding it
+39,Object which is occluding another object switches places and goes behind it
+40,Single object orbiting another object in the center in clockwise direction on horizontal plane
+41,Single object orbiting another object in the center in clockwise direction first and then counter clockwise direction on horizontal plane
+42,Single object orbiting another object in the center in clockwise direction on vertical plane
+43,Single object rising straight up without changing direction
+44,Single object rising in a zigzag pattern
+45,Shooting projectile from one corner to opposite corner
+46,Shooting projectile from right corner to left corner
+47,Shooting two projectiles from same position to opposite corner
+48,Large single object shrinking into medium sized object
+49,Two different large objects shrinking into same smaller size
+50,Single object teleporting from one corner to another
+51,Single object teleporting from one corner to another while another object is in the center
+52,Two objects in opposite corners switch places by teleporting

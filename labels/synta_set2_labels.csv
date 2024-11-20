@@ -1,0 +1,48 @@
+id,name
+0,Multiple objects all appearing one by one by increasing opacity
+1,Two objects appearing among two other objects
+2,Multiple objects arriving one by one
+3,Single object arriving among many objects
+4,"Single object arriving beside another single object, pausing then going away"
+5,Multiple objects bouncing on plain surface at almost similar heights eventually stop
+6,Single object imitating the motion of bouncing against a wall
+7,Single object bouncing on a plain surface perpetually
+8,Single object imitating the motion of bouncing and going up stairs
+9,Single object changing from dark to bright color
+10,Single object changing color then returning to previous one
+11,Single object of other shape changes into sphere
+12,Single object of other shape changes into cylinder
+13,Single object changing into another shape then turning back to original shape
+14,Single object cloning into two identical objects both going in different directions
+15,Single object cloning into multiple identical objects at once
+16,Multiple objects departing one by one
+17,Single object departing among many objects
+18,"Single object departing beside another single object, then coming back shortly"
+19,Multiple objects all disappearing one by one by decreasing opacity
+20,Multiple objects some disappearing and some remaining
+21,Small single object expanding into large object
+22,Two same small objects expanding into different bigger sizes
+23,Single object falling at an angle
+24,Single object falling at a curved path
+25,Single object following another object all the time in a complex path
+26,Single object not following another object at first but later starts following
+27,Faster object merging with slower object into one similar sized object while moving in same direction
+28,Multiple objects merging into multiple big objects
+29,Single object moving quickly from one position to another and stopping
+30,Two objects moving and switching their positions
+31,Single object moving from right to left
+32,Two objects moving in opposite directions in circular path but not colliding later
+33,One object moving towards multiple stationary objects but not colliding
+34,Big object coming infront of small object mostly or fully occluding it
+35,Two objects partially occluding two other objects switch positions with the latter two and go behind them
+36,Single object orbiting another object in the center in counter clockwise direction on horizontal plane
+37,Single object orbiting another object in clockwise direction then second object orbiting first object in clockwise direction on horizontal plane
+38,Single object orbiting another object in the center in counter clockwise direction on vertical plane
+39,Single object rising at an angle
+40,Single object rising at a curved path
+41,Shooting projectile from left corner to right corner
+42,Shooting two projectiles from opposite corners switching their positions
+43,Large single object shrinking into very small object
+44,Two different large objects shrinking into different smaller sizes
+45,Four objects in four corners switch places by teleporting
+46,Two objects together in one corner then one teleports to other corner

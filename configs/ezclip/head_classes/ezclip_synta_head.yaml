@@ -45,7 +45,7 @@ network:
     describe:
 solver:
     type: cosine
-    epochs: 81
+    epochs: 151
     start_epoch: 0
     epoch_offset: 0
     optim: adamw
