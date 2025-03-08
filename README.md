@@ -1,4 +1,4 @@
-# TrAc-Bench
+# Motion Transferability in Videos
 ## SynTA
 To generate the dataset videos, please follow the instructions in [GENERATE_SYNTA.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/synta_generate_blender/GENERATE_SYNTA.md).
 A sample of the dataset with 10 videos for each fine-context class is given in `synta_samples`. The file naming scheme, "Head class name + Intra class no.", aligns with the corresponding fine-context captions provided in `synta_samples/synta_naming_scheme.csv`. The full dataset will be available later.
