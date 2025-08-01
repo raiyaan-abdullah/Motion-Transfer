@@ -5,11 +5,11 @@
 🎉 (June 25, 2025) Paper got accepted at ICCV 2025
 
 ## Benchmark datasets
-The detailed videos list and class labels for `Syn-TA`, `Kinectics400 - TA`, and `Something-something-v2 - TA` are provided in `dataset_splits` and `labels`. Please download the videos from their original providers for [K400-TA](https://github.com/cvdfoundation/kinetics-dataset) and [SSv2-TA](https://www.qualcomm.com/developer/software/something-something-v-2-dataset).
+The detailed videos list and class labels for `Syn-TA`, `Kinectics400 - TA`, and `Something-something-v2 - TA` are provided in `dataset_splits` and `labels`. Following these, please download the subset of videos from their original providers for [K400-TA](https://github.com/cvdfoundation/kinetics-dataset) and [SSv2-TA](https://www.qualcomm.com/developer/software/something-something-v-2-dataset).
 
 ## Syn-TA
-Download the Syn-TA dataset [from here]().
-If you wish to generate the dataset videos, please follow the instructions in [GENERATE_SYNTA.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/synta_generate_blender/GENERATE_SYNTA.md).
+The Syn-TA dataset videos will be uploaded soon.
+If you wish to generate them in Blender, please follow the instructions in [GENERATE_SYNTA.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/synta_generate_blender/GENERATE_SYNTA.md).
 
 ## Training
 The training configurations for all the models are available at `configs`. Please see [INSTRUCTIONS.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/configs/INSTRUCTIONS.md) for more details.
