@@ -1,4 +1,4 @@
-Please follow the instructions below for each model. For number of classes, refer to this table:
+We provide the configuration files and brief instructions on file organization for each model/method for all datasets.
 ## Number of classes
 
 | Dataset    | Head | Fine-Context Set 1 | Fine-Context Set 2 |
@@ -34,3 +34,9 @@ Please follow the instructions below for each model. For number of classes, refe
     - Similar to **I3D** using [SlowFast](https://github.com/facebookresearch/SlowFast).
 13. **XCLIP**
     - Follow the setup instructions in [X-CLIP](https://github.com/microsoft/VideoX/tree/master/X-CLIP). Place our configuration files in `configs`.
+14. **VideoDG**
+    - Follow the setup instructions in [VideoDG](https://github.com/thuml/VideoDG). Run our provided files. You may also create a folder for each custom dataset in `data_list` and follow existing file organization.
+15. **STDN**
+    - Follow the setup instructions in [STDN](https://github.com/KunyuLin/STDN). Run our provided files. You may also create a folder for each custom dataset in `datalists` and follow existing file organization.
+16. **CIR**
+    - Follow the setup instructions in [ARGO1M-What-can-a-cook](https://github.com/Chiaraplizz/ARGO1M-What-can-a-cook). You need to extract SlowFast features and generate FFCV features (.beton) from them. Place our configuration files in `code/configs/config_run`.
