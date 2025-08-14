@@ -1,6 +1,6 @@
 # Punching Bag vs. Punching Person: Motion Transferability in Videos [ICCV 25]
 [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](http://raiyaan-abdullah.github.io/Motion-Transfer-webpage/)
-[![Paper coming soon.](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)]()
+[![Paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2508.00085)
 
 🎉 (June 25, 2025) Paper got accepted at ICCV 2025
 
