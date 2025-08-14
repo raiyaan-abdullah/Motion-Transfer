@@ -14,7 +14,8 @@ If you wish to generate them in Blender, please follow the instructions in [GENE
 ## Training
 The training configurations for all the models are available at `configs`. Please see [INSTRUCTIONS.md](https://github.com/raiyaan-abdullah/TrAc-Bench/blob/main/configs/INSTRUCTIONS.md) for more details.
 
-## Absolute drop and harmonic mean of known (CoarseMotion-KC) and unknown (CoarseMotion-UC) accuracies (average of two sets) for *coarse activities*
+## Results
+Absolute drop and harmonic mean of known (CoarseMotion-KC) and unknown (CoarseMotion-UC) accuracies (average of two sets) for *coarse activities*
 | **Model**         | **Syn-TA**                     |                  |                  |                  | **K400-TA**                    |                  |                  |                  | **SSv2-TA**                    |                  |                  |                  |
 |-------------------|:------------------------------:|:-----------------|:-----------------|:-----------------|:------------------------------:|:-----------------|:-----------------|:-----------------|:------------------------------:|:-----------------|:-----------------|:-----------------|
 |                   | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** |
@@ -38,7 +39,7 @@ The training configurations for all the models are available at `configs`. Pleas
 | STDN              | 70.66         | 23.97         | 46.69         | 35.72         | 68.11         | 46.10         | 22.01         | 54.89         | 35.93         | 22.31         | 13.62         | 27.51         |
 | CIR               | 60.13         | 9.59          | 50.54         | 16.41         | 68.53         | 12.66         | 55.87         | 21.34         | 48.01         | 31.97         | 16.04         | 38.37         |
 
-## Absolute drop and harmonic mean of known (CoarseMotion-KC) and unknown (CoarseMotion-UC) accuracies (average of two sets) for *fine activities*
+Absolute drop and harmonic mean of known (CoarseMotion-KC) and unknown (CoarseMotion-UC) accuracies (average of two sets) for *fine activities*
 | **Model**         | **Syn-TA**                     |                  |                  |                  | **K400-TA**                    |                  |                  |                  | **SSv2-TA**                    |                  |                  |                  |
 |-------------------|:------------------------------:|:-----------------|:-----------------|:-----------------|:------------------------------:|:-----------------|:-----------------|:-----------------|:------------------------------:|:-----------------|:-----------------|:-----------------|
 |                   | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** | **Known ↑** | **Unknown ↑** | **D_abs ↓** | **HM ↑** |
